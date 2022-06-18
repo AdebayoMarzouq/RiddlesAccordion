@@ -1,12 +1,21 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Muli', sans-serif;
-  background-color: lightcyan;
+  -webkit-animation: change-color 20s ease-in-out both infinite;
+  animation: change-color 20s ease-in-out both infinite;
 }
 
 h1 {
@@ -17,7 +26,7 @@ h1 {
 
 .faq-container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: auto auto;
 }
 
 .faq {
@@ -28,12 +37,15 @@ h1 {
   padding: 30px;
   position: relative;
   overflow: hidden;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
   transition: 0.3s ease;
 }
 
 .faq.active {
   background-color: white;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1)
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .faq.active::before,
@@ -53,6 +65,7 @@ h1 {
   color: #3498db;
   top: -10px;
   left: -30px;
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
@@ -70,8 +83,14 @@ h1 {
   border: 0;
   border-radius: 50%;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-size: 16px;
   padding: 0;
@@ -86,7 +105,6 @@ h1 {
   outline: 0;
 }
 
-
 .faq.active .faq-toggle .fa-times {
   color: #fff;
   display: block;
@@ -94,4 +112,56 @@ h1 {
 
 .faq.active .faq-toggle {
   background-color: #9fa4a8;
+}
+
+@-webkit-keyframes change-color {
+  0% {
+    background-color: lightcyan;
+  }
+
+  20% {
+    background: lightpink;
+  }
+
+  40% {
+    background: lightgreen;
+  }
+
+  60% {
+    background: lightskyblue;
+  }
+
+  80% {
+    background: lightyellow;
+  }
+
+  100% {
+    background: lightsteelblue;
+  }
+}
+
+@keyframes change-color {
+  0% {
+    background-color: lightcyan;
+  }
+
+  20% {
+    background: lightpink;
+  }
+
+  40% {
+    background: lightgreen;
+  }
+
+  60% {
+    background: lightskyblue;
+  }
+
+  80% {
+    background: lightyellow;
+  }
+
+  100% {
+    background: lightsteelblue;
+  }
 }
